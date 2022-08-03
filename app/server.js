@@ -45,7 +45,6 @@ app.use((err, req, res, next) => {
         error: err,
         message: err.message,
     });
-    next();
 });
 
 // Establish PORT Connection
