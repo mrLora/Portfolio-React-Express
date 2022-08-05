@@ -4,5 +4,5 @@ module.exports = process.env.DATABASE_URL || {
   port: process.env.PORT || 5432,
   // After/Before deployment hosts
   host: process.env.HOST || 'localhost',
-  database: process.env.DATABASE || 'contacts_dev',
+  database: process.env.DATABASE || 'contact_dev',
 };
