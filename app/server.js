@@ -27,27 +27,28 @@ app.use(bodyParser.json());
 
 // Is there a connection to the server? 200 = OK
 app.get('/', (req, res) => {
-    res.send('Server is up and running...');
+  res.send('Server is up and running...');
 });
 
 // Route Error Handler
 app.use('*', (err, req, res, next) => {
-    res.status(400).json({
-        error: err,
-        message: err.message,
-    });
-    next();
+  res.status(400).json({
+    error: err,
+    message: err.message,
+  });
+  next();
 });
 
 // Server-side Error Handler
 app.use((err, req, res, next) => {
-    res.status(500).json({
-        error: err,
-        message: err.message,
-    });
+  res.status(500).json({
+    error: err,
+    message: err.message,
+  });
+  next();
 });
 
 // Establish PORT Connection
 app.listen(PORT, () => {
-    console.log(`Sever is up and listening on ${PORT}, in ${app.get('env')} mode.`);
-})
+  console.log(`Sever is up and listening on ${PORT}, in ${app.get('env')} mode.`);
+});
