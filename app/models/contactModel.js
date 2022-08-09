@@ -6,7 +6,7 @@ const getContacts = () => db.many(`
   FROM contacts
 `);
 // Serach for one contact
-const getOne = (id) => db.one(`
+const getContact = (id) => db.one(`
   SELECT *
   FROM contacts
   WHERE id = $1
@@ -25,5 +25,5 @@ const destroy = (id) => db.none(`
 `, id);
 
 module.exports = {
-  getContacts, getOne, saveContact, destroy,
+  getContacts, getContact, saveContact, destroy,
 };
