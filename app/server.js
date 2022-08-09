@@ -11,7 +11,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Acquire Routers
-const repoRouter = require('./routes/reposRoute');
 const contactRouter = require('./routes/contactRoute');
 
 // Initializing PORT
@@ -24,6 +23,10 @@ app.use(logger('dev'));
 // Initializing body-parser to present readable data
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+// Initaling cors to handle http requests made from React server
+app.use(cors());
+// Mount Route
+app.use('/contact', contactRouter);
 
 // Is there a connection to the server? 200 = OK
 app.get('/', (req, res) => {
