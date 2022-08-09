@@ -32,7 +32,7 @@ const create = async (req, res, next) => {
   }
 };
 // Delete contact from DB
-const destroy = asynv (req, res, next) => {
+const destroy = async (req, res, next) => {
   try {
     await db.destroy(req.params.id);
     next();
